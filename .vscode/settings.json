@@ -1,0 +1,15 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "/Users/caelenyeung/Downloads/Comp sci gr11/JAR's/core.jar",
+            "/Users/caelenyeung/Downloads/video/**/*.jar"
+        ],
+        "exclude": [
+            "lib/repl_core.jar",
+            "/Users/caelenyeung/Downloads/video/library/video.jar",
+            "/Users/caelenyeung/Downloads/video/library/jna.jar",
+            "/Users/caelenyeung/Downloads/video/library/gst1-java-core-1.4.0.jar"
+        ]
+    }
+}
