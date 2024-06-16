@@ -2,6 +2,11 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+* A typing game with 10 levels
+* @author: C.Yeung
+*/ 
+
 public class Sketch extends PApplet {
     // Import the images for the program(there is a lot)
     PImage lvl1;
@@ -38,6 +43,7 @@ public class Sketch extends PApplet {
     PImage speech1;
     PImage story;
 
+    // Images for the cursors
     PImage cursor;
     PImage cursor2;
     PImage cursor3;
@@ -47,6 +53,8 @@ public class Sketch extends PApplet {
     PImage cursor7;
     PImage cursor8;
     PImage chosenCursor = null;
+    
+    // Images for cursor display 
     PImage cursorD1;
     PImage cursorD2;
     PImage cursorD3;
@@ -66,14 +74,14 @@ public class Sketch extends PApplet {
     String[][] wordSets = {
         {"attack", "vacuum", "words", "goblin", "type", "quack"},
         {"intense quacking", "duck", "George Washington", "spooky skeletons"},
-        {"watermark", "business", "shutterstock", "Why is he so angry", "chill out"},
+        {"watermark", "business", "shutterstock", "Why is he so angry?", "chill out"},
         {"The Walking Duck", "Dawn of the Duck", "Ash vs Evil Duck", "28 Ducks Later", "Duckpocalypse"},
         {"taxes", "deadline", "audit", "receipts", "fraud", "deducktible expenses", "capital gains", "offshore accounts", "criminal investigation"},
         {"Duck Duck Goose", "Waddle Away", "Wise Quacker", "Peking", "Duck You!", "It's Duckin Time", "I'm running out of duck puns"},
-        {"Bill", "Nye", "The", "Science", "Guy", "Why is Aristotle even here", "I am so tired", "hello", "cat", "keyboard", "388934287", "zzzzzzzzzz"}, 
-        {"I am bored", "quackity quack", "^&!^5#@)", "barbie", "java", "flappy", "Goose", "adfjhajskdf", "bonjour", "words words words", "letters", "e",},
+        {"Bill", "Nye", "The", "Science", "Guy", "Why is Aristotle even here?", "I am so tired", "hello", "cat", "keyboard", "388934287", "zzzzzzzzzz"}, 
+        {"I am bored.", "quackity quack.", "^&!^5#@)", "barbie", "java!", "flappy", "Goose", "adfjhajskdf", "bonjour!", "words words words", "letters", "e",},
         {"accept"},
-        {"VACUUM!!!","GiVe it BACk!", "DYSON", "TuRBoFLOw 6000W", "avAilabLe at wAlmart", "I. Will. Punch. You. In. The. Hand.", "Feel the wrath of my duck power.", "I need to go clean my floors.", "I worked minimum wage to buy that.", "QUACKKKKKKKK!", "mauvaise main", "quackity quack", "qauk", "qack", "qaueck", "qoak"},
+        {"VACUUM!!!","GiVe it BACk!", "DYSON...", "TuRBoFLOw 6000W", "avAilabLe at wAlmart", "I. Will. Punch. You. In. The. Hand.", "Feel the wrath of my duck power.", "I need to go clean my floors.", "I worked minimum wage to buy that.", "QUACKKKKKKKK!", "mauvaise main", "quackity quack", "qauk", "qack", "qaueck", "qoak"},
         {" "}
     };
 
@@ -114,13 +122,20 @@ public class Sketch extends PApplet {
     int level = 0;
     int fontSize = 40;
 
+    /**
+    * Set the size of the screen
+    * @author: C.Yeung
+    */ 
     public void settings() {
-        // Size of background
+        // Size of screen
         size(1280, 720);
     }
 
+    /**
+    * Load and resize the images, and set up some variables
+    * @author: C.Yeung
+    */ 
     public void setup() {
-
         // Load the level images
         lvl1 = loadImage("lvl1.png");
         lvl1b = loadImage("lvl1b.png");
@@ -192,41 +207,40 @@ public class Sketch extends PApplet {
         def = createFont("MontsB.ttf", 20);
         dragon = createFont("dragon.otf", 20);
 
+        // Set the array and timer 
         setCurrentArray();
         startTime = millis();
     }
 
+    /**
+    * The main method to draw all the elements 
+    * @author: C.Yeung
+    */ 
     public void draw() {
-
-        // Display images for the menu page
+        // Check to see which level the player is on
         if (level == 0){
+            // Display the background and different buttons
             image(Menu, 0, 0);
             image(play, 0, 0);
             image(option, 0, 0);
-
             // Display the story page if the story button is pressed
             if(storyVisible){
                 image(story, 0, 0);
             }
-
             // Display the more page if the story button is pressed
             if (popupVisible) {
                 image(popup, 0, 0);
             }
-
             // Display the cursor page if the story button is pressed
             if (popup2Visible) {
                 image(popup2, 0, 0);
                 cursorDisplay();    
             }
-
             // Display the learn more page if the story button is pressed
             if (popup3Visible) {
                 image(popup3, 0, 0);
-
             }
-        
-        // Create each gamnelevel from 1 to 10 
+        // Create each game level from 1 to 10 
         }else if(level == 1){
             // Prevent the user from skipping levels with Enter key
             unlock = false;
@@ -234,92 +248,79 @@ public class Sketch extends PApplet {
             image(lvl1, 0, 0);
             // Display level timer and other
             display();
-
         }else if(level == 2){
             unlock = false;
             image(lvl2, 0, 0);
             display();
-            
         }else if(level == 3){
             unlock = false;
             image(lvl3, 0, 0);
-            display();
-            
+            display();      
         }else if(level == 4){
             unlock = false;
             image(lvl4, 0, 0);
             display();
-
         }else if(level == 5){
             unlock = false;
             image(lvl5, 0, 0);
-            display();
-        
+            display();       
         }else if(level == 6){
             unlock = false;
             image(lvl6, 0, 0);
             display();
-
         }else if(level == 7){
             unlock = false;
             image(lvl7, 0, 0);
-            display();
-        
+            display();       
         }else if(level == 8){
             unlock = false;
             image(lvl8, 0, 0);
-            display();
-        
+            display();        
         }else if(level == 9){
             unlock = false;
             image(lvl9, 0, 0);
             display();
             // Display a message
-            image(lvl9message, 0, 0);
-        
+            image(lvl9message, 0, 0);       
         }else if(level == 10){
             unlock = false;
             image(lvl10, 0, 0);
-            display();
-            
+            display();          
         }else if(level == 11){
             unlock = false;
-            image(end, 0, 0);
-            
+            image(end, 0, 0);           
         }else{ 
             fill(255, 0, 0);
             rect(0, 0, 1000, 700);
-        }
-        
+        }      
     }
-       
+    
+    /**
+    * Let the user press enter to continue when they win, and press r to retry when they lose
+    * @author: C.Yeung
+    */  
     public void keyTyped() {
         // Check to see if the game is finished
         if (isFinished) return;
-
             // Check if the current letter typed matches the letter 
             if (key == currentWord.charAt(letterIndex)) {
                 letterIndex++;
-
                 // Start the timer once the first letter is typed
                 if (!begin) {
                     begin = true; 
                     startTime = millis(); 
                 }
             }
-                // Check if the a full phrase has been typed
-                if (letterIndex == currentWord.length()) {
-                    wordIndex++;
-
-                    if (wordIndex == wordSets[level - 1].length) {
-                        isFinished = true;
-                        isVictory = true;
-
-                    } else {
-                        setCurrentArray();
-                        letterIndex = 0;
-
-                    }
+            // Check if the a full phrase has been typed
+            if (letterIndex == currentWord.length()) {
+                wordIndex++;
+                if (wordIndex == wordSets[level - 1].length) {
+                    isFinished = true;
+                    isVictory = true;
+                } else {
+                    setCurrentArray();
+                    letterIndex = 0;
+                }
         }
     }
 
@@ -503,7 +504,6 @@ public class Sketch extends PApplet {
         }else{
             image(lvl1, 0, 0);
         }
-        
             // Set font settings
             fill(0, 100); 
             rect(0, 0, width, height);
@@ -749,6 +749,9 @@ public class Sketch extends PApplet {
 
         }else if(level == 8){
             totalTime = 50000;
+
+        }else if(level == 7){
+            totalTime = 35000;
 
         }else {
             totalTime = defaultTime;     
