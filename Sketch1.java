@@ -1,36 +1,18 @@
 import processing.core.PApplet;
 
 public class Sketch1 extends PApplet {
-	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
-  public void settings() {
-	// put your size call here
-    size(400, 400);
-  }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
-  public void setup() {
-    background(210, 255, 173);
-  }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
-  public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
-
-    stroke(255);
-    line(50, 125, 70, 50);  
-  }
-  
-  // define other methods down here.
-}
+    String[][] wordSets = {
+      {"attack", "vacuum", "words", "goblin", "type", "quack"},
+        {"intense quacking", "duck", "George Washington", "spooky skeletons"},
+        {"watermark", "business", "shutterstock", "Why is he so angry", "chill out"},
+        {"The Walking Duck", "Dawn of the Duck", "Ash vs Evil Duck", "28 Ducks Later", "Duckpocalypse"},
+        {"taxes", "deadline", "audit", "receipts", "fraud", "deducktible expenses", "capital gains", "offshore accounts", "criminal investigation"},
+        {"Duck Duck Goose", "Waddle Away", "Wise Quacker", "Peking", "Duck You!", "It's Duckin Time", "I'm running out of duck puns"},
+        {"Bill", "Nye", "The", "Science", "Guy", "Why is Aristotle even here", "I am so tired", "hello", "cat", "keyboard", "388934287", "zzzzzzzzzz"}, 
+        {"I am bored", "quackity quack", "^&!^5#@)", "barbie", "java", "flappy", "Goose", "adfjhajskdf", "bonjour", "words words words", "letters", "e",},
+        {"accept"},
+        {"VACUUM!!!","GiVe it BACk!", "DYSON", "TuRBoFLOw 6000W", "avAilabLe at wAlmart", "I. Will. Punch. You. In. The. Hand.", "Feel the wrath of my duck power.", "I need to go clean my floors.", "I worked minimum wage to buy that.", "QUACKKKKKKKK!", "mauvaise main", "quackity quack", "qauk", "qack", "qaueck", "qoak"},
+        {" "}
+ 

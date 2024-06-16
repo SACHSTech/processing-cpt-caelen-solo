@@ -1,3 +1,11 @@
-# Program Title (edit this)
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/B2OnycBl)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15144777&assignment_repo_type=AssignmentRepo)
+# Key Quack
 
 Put your program description here.
+
+Key Quack is a fun typing game that allows the user to enjoy 10 levels of fun typing challenges while also improving their typing skills. The goal of the game is to get through the levels by typing the words, symbols, and punctuation displayed in the box in the bottom left. As the levels progress, the difficulty of the given words increase. After finishing typing the set of words for a certain level, the user will be able to press the Enter key to move onto the next level. 
+
+Each level will also have a given time limit to type all of the words(time limit may vary for certain levels). If the user is not able to finish typing the words within the time limit, they will lose the level and be given the opportunity to retry by pressing the r key. Since the game is less competitive and more focused on learning/practicing, resetting the level will let the user move back to the last word that they were on. This also prevents the user from being infinitely stuck on the same level. 
+
+Along with the gameplay, Key Quack also has a unique menu screen with two main buttons: Story and More. Pressing the story button will take the user to the story page that gives a quick backstory of the main character Walter. Pressing the more button will bring you to a page with two more buttons: Cursor and Learn More. The cursor page will let the user change their cursor for fun, with 8 options. The Learn More page will give the user extra resources that they can use to learn and improve their typing skills. Clicking on the link buttons at the side will directly bring them to the websites. Each page also has a back button that brings them back to the last page. The main menu also displays text to tell the user that they can use the Enter key to begin playing. 
